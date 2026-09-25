@@ -53,6 +53,19 @@
     return d.toLocaleDateString("ru-RU", { day: "numeric", month: "long", year: "numeric" });
   }
 
+  /* ---------- Фотографии (photos/ из конфига) ---------- */
+  const photos = ((S.photos || []).map((p) =>
+    typeof p === "string"
+      ? { file: p, hint: "", alt: "Фото Миши" }
+      : { file: p.file, hint: p.hint || "", alt: p.alt || "Фото Миши" }
+  )).filter((p) => p.file);
+
+  $$("[data-photo]").forEach((el) => {
+    const i = parseInt(el.getAttribute("data-photo"), 10);
+    const p = photos[i];
+    if (p) { el.src = p.file; el.alt = p.alt; }
+  });
+
   /* ---------- Иконки ---------- */
   const ICO = {
     heart: '<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 21s-7.5-4.9-10-9.6C.4 8 2 4.5 5.5 4.2c2-.2 3.9.8 5 2.4h3c1.1-1.6 3-2.6 5-2.4C22 4.5 23.6 8 22 11.4 19.5 16.1 12 21 12 21z" transform="scale(.96) translate(.5 .5)"/><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>',
@@ -133,10 +146,10 @@
   $$("[data-slider]").forEach((root) => {
     const track = $("[data-slider-track]", root);
     const dotsBox = $("[data-slider-dots]", root);
-    const slides = (S.slider && S.slider.length ? S.slider : (S.gallery || []).slice(0, 3));
+    const slides = photos.slice(0, 3);
     if (!track || !slides.length) return;
     track.innerHTML = slides
-      .map((src, i) => `<img src="${esc(src)}" alt="Фото ${i + 1}" ${i ? 'loading="lazy"' : 'fetchpriority="high"'} draggable="false">`)
+      .map((p, i) => `<img src="${esc(p.file)}" alt="${esc(p.alt)}" ${i ? 'loading="lazy"' : 'fetchpriority="high"'} draggable="false">`)
       .join("");
     const imgs = $$("img", track);
     let idx = 0, timer = null;
@@ -182,12 +195,15 @@
 
   /* ---------- Галерея + лайтбокс ---------- */
   $$("[data-gallery]").forEach((grid) => {
-    const items = (S.gallery && S.gallery.length ? S.gallery : (S.slider || []));
+    const items = photos;
     grid.innerHTML = items
-      .map((src, i) => `
-        <button class="gallery-item" type="button" data-lb="${esc(src)}" aria-label="Открыть фото ${i + 1}">
-          <img src="${esc(src)}" alt="Фото ${i + 1}" loading="lazy">
-        </button>`)
+      .map((p, i) => `
+        <figure class="gallery-item-wrap">
+          <button class="gallery-item" type="button" data-lb="${esc(p.file)}" aria-label="Открыть фото: ${esc(p.alt)}">
+            <img src="${esc(p.file)}" alt="${esc(p.alt)}" loading="lazy">
+          </button>
+          ${p.hint ? `<figcaption class="gallery-cap">${esc(p.hint)}</figcaption>` : ""}
+        </figure>`)
       .join("");
 
     let lb = null;
@@ -304,11 +320,13 @@
   function copyField(label, value) {
     if (!value) return "";
     return `
-      <div class="copy-field">
-        <code>${esc(value)}</code>
+      <div class="copy-row">
+        <div class="copy-main">
+          <span class="copy-label">${esc(label)}</span>
+          <code>${esc(value)}</code>
+        </div>
         <button class="copy-btn" type="button" data-copy="${esc(value)}">Скопировать</button>
-      </div>
-      <div class="qr-hint" style="text-align:left;margin:-4px 0 12px;">${esc(label)}</div>`;
+      </div>`;
   }
 
   function buildModal() {
@@ -419,11 +437,29 @@
     if (e.key === "Escape") closeModal();
   });
 
-  /* ---------- Подвал: юридический блок ---------- */
+  /* ---------- Подвал: юридический блок + рукописная строка ---------- */
   $$("[data-legal-organizer]").forEach((el) => (el.textContent = (S.legal && S.legal.organizer) || ""));
   $$("[data-legal-status]").forEach((el) => (el.textContent = (S.legal && S.legal.status) || ""));
   $$("[data-legal-extra]").forEach((el) => (el.textContent = (S.legal && S.legal.extra) || ""));
   $$("[data-year]").forEach((el) => (el.textContent = new Date().getFullYear()));
+  $$(".site-footer .footer-bottom").forEach((fb) => {
+    const p = document.createElement("p");
+    p.className = "footer-hand";
+    p.textContent = "спасибо, что вы рядом ♥";
+    fb.before(p);
+  });
+
+  /* ---------- Липкая кнопка «Помочь» внизу (телефоны) ---------- */
+  const page = (location.pathname.split("/").pop() || "index.html").toLowerCase();
+  if (page !== "thanks.html" && page !== "404.html") {
+    const bar = document.createElement("div");
+    bar.className = "mobile-cta";
+    bar.innerHTML = `
+      <div class="mc-text"><b>${fmtMoney(raised)}</b><span>собрано из ${fmtMoney(goal)}</span></div>
+      <button class="btn btn-primary mc-btn" type="button" data-donate-open>Помочь</button>`;
+    document.body.appendChild(bar);
+    document.body.classList.add("has-mobile-cta");
+  }
 
   /* ---------- Появление при прокрутке ---------- */
   function observeReveal(root) {

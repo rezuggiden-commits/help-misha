@@ -4,17 +4,17 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Поможем Мише — сбор на лечение ребёнка</title>
-  <meta name="description" content="Сбор средств на лечение Миши. Каждый перевод — шаг к выздоровлению. Помогите: СБП, карта, перевод по реквизитам.">
+  <meta name="description" content="Мише 6 лет, он борется с тяжёлой болезнью. Помогите нам собрать деньги на лечение: СБП, карта, перевод по реквизитам. Отчёты — каждый месяц.">
   <link rel="canonical" href="https://rezuggiden-commits.github.io/help-misha/">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Поможем Мише">
   <meta property="og:title" content="Поможем Мише — сбор на лечение">
-  <meta property="og:description" content="Каждый перевод — шаг к выздоровлению. СБП, карта, перевод по реквизитам.">
+  <meta property="og:description" content="Миша борется с тяжёлой болезнью. Каждый перевод — шаг к выздоровлению. СБП, карта, перевод по реквизитам.">
   <meta property="og:url" content="https://rezuggiden-commits.github.io/help-misha/">
   <meta property="og:image" content="https://rezuggiden-commits.github.io/help-misha/img/og-cover.jpg">
   <meta property="og:locale" content="ru_RU">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="theme-color" content="#3d5a80">
+  <meta name="theme-color" content="#f6efe2">
   <link rel="icon" href="img/favicon.svg" type="image/svg+xml">
   <link rel="icon" href="img/favicon-192.png" type="image/png" sizes="192x192">
   <link rel="apple-touch-icon" href="img/favicon-180.png">
@@ -35,7 +35,7 @@
 <header class="site-header">
   <div class="container header-inner">
     <a class="logo" href="index.html">
-      <svg class="heart-ico" viewBox="0 0 24 24" fill="currentColor" width="26" height="26" aria-hidden="true"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+      <svg class="heart-ico" viewBox="0 0 24 24" fill="currentColor" width="25" height="25" aria-hidden="true"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
       <span data-fill="site.title">Поможем Мише</span>
     </a>
     <nav class="nav" aria-label="Основная навигация">
@@ -52,7 +52,7 @@
     <a href="gallery.html">Галерея</a>
     <a href="reports.html">Отчёты</a>
     <a href="contacts.html">Контакты</a>
-    <a class="btn btn-primary" href="#donate" data-donate-open>Сделать пожертвование</a>
+    <a class="btn btn-primary" href="#donate" data-donate-open>Помочь Мише</a>
   </nav>
 </header>
 
@@ -61,15 +61,17 @@
   <!-- ГЕРОЙ -->
   <section class="hero">
     <div class="container hero-grid">
-      <div class="slider" data-slider aria-label="Фотографии Миши" aria-roledescription="карусель">
-        <div class="slider-track" data-slider-track></div>
-        <button class="slider-arrow prev" type="button" data-slider-prev aria-label="Предыдущее фото">‹</button>
-        <button class="slider-arrow next" type="button" data-slider-next aria-label="Следующее фото">›</button>
-        <div class="slider-dots" data-slider-dots></div>
+      <div class="photo-frame">
+        <div class="slider" data-slider aria-label="Фотографии Миши" aria-roledescription="карусель">
+          <div class="slider-track" data-slider-track></div>
+          <button class="slider-arrow prev" type="button" data-slider-prev aria-label="Предыдущее фото">‹</button>
+          <button class="slider-arrow next" type="button" data-slider-next aria-label="Следующее фото">›</button>
+          <div class="slider-dots" data-slider-dots></div>
+        </div>
       </div>
       <div class="hero-text">
-        <span class="chip">Нужна ваша помощь</span>
-        <h1>Поможем <span data-fill="child.nameDative">Мише</span> победить болезнь</h1>
+        <span class="chip">нужна ваша помощь</span>
+        <h1>Поможем <span data-fill="child.nameDative">Мише</span> <em class="marker">победить</em> болезнь</h1>
         <p class="lead" data-fill="child.shortStory"></p>
         <div class="progress-card">
           <div class="progress-amounts">
@@ -80,58 +82,63 @@
             <div class="progress-fill" data-progress-bar></div>
           </div>
           <div class="progress-meta">
-            <span>Собрано <b data-percent>0%</b></span>
-            <span>Осталось <b data-left>—</b></span>
+            <span>собрано <span class="pct" data-percent>0%</span></span>
+            <span>осталось <b data-left>—</b></span>
           </div>
           <p class="deadline-note" data-deadline-wrap hidden>Сбор открыт до <b data-deadline></b></p>
         </div>
         <div class="hero-cta">
-          <button class="btn btn-primary btn-lg" type="button" data-donate-open>Сделать пожертвование</button>
-          <a class="btn btn-ghost" href="story.html">Узнать историю</a>
+          <button class="btn btn-primary btn-lg" type="button" data-donate-open>Помочь Мише</button>
+          <a class="btn btn-ghost" href="story.html">Наша история</a>
         </div>
-        <p class="hero-note">Переводы принимаются через СБП, на карту и по реквизитам. Отчёты о тратах — в разделе «Отчёты».</p>
+        <p class="hand">каждый рубль — на лечение, все траты показываем ниже ↓</p>
       </div>
     </div>
   </section>
 
   <!-- КАК ПОМОЧЬ -->
-  <section class="section section-alt" id="how-help">
-    <div class="container">
-      <div class="section-head center reveal">
+  <section class="section-alt" id="how-help">
+    <div class="wave" aria-hidden="true">
+      <svg viewBox="0 0 1440 42" preserveAspectRatio="none"><path fill="currentColor" d="M0 22 C 110 38 230 6 350 18 C 470 30 590 4 710 16 C 830 28 950 6 1070 18 C 1190 30 1310 8 1440 20 L 1440 42 L 0 42 Z"/></svg>
+    </div>
+    <div class="container section" style="padding-top:26px;">
+      <div class="section-head reveal">
         <h2>Как помочь</h2>
-        <p>Выберите удобный способ — все переводы идут на оплату лечения. Нажмите на способ, чтобы открыть подробности.</p>
+        <p>Выберите удобный способ — перевод придёт напрямую семье и уйдёт на лечение. Нажмите на способ, откроется окошко со всеми деталями.</p>
       </div>
-      <div class="cards-grid cols-4">
-        <div class="card reveal">
+      <div class="help-grid">
+        <div class="card card--featured reveal">
           <span class="card-ico">
-            <svg viewBox="0 0 24 24" fill="none" stroke="#4a7bab" stroke-width="1.8" aria-hidden="true"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><path d="M14 14h3v3h-3zM20 14h1M14 20h1M18 18h3v3h-3z"/></svg>
+            <svg viewBox="0 0 24 24" fill="none" stroke="#bd5537" stroke-width="1.8" aria-hidden="true"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><path d="M14 14h3v3h-3zM20 14h1M14 20h1M18 18h3v3h-3z"/></svg>
           </span>
-          <h3>СБП по QR-коду</h3>
-          <p>Наведите камеру на QR-код — перевод через приложение вашего банка, без комиссии.</p>
-          <button class="card-link" type="button" data-donate-open style="background:none;border:0;padding:0;cursor:pointer;text-align:left;">Показать QR →</button>
+          <div class="card-body">
+            <h3>СБП — перевод за 10 секунд</h3>
+            <p>Наведите камеру на QR-код — банк сам откроет перевод. Без комиссии, деньги приходят семье сразу.</p>
+          </div>
+          <button class="btn btn-primary" type="button" data-donate-open>Открыть QR-код</button>
+        </div>
+        <div class="card card--blue reveal">
+          <span class="card-ico">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#2e4a5e" stroke-width="1.8" aria-hidden="true"><rect x="2.5" y="5" width="19" height="14" rx="2.5"/><path d="M2.5 9.5h19M6 15h4"/></svg>
+          </span>
+          <h3>Переводом на карту</h3>
+          <p>Из приложения банка или через банкомат. Номер скопируется одной кнопкой.</p>
+          <button class="card-link" type="button" data-donate-open>Открыть номер карты →</button>
+        </div>
+        <div class="card card--sand reveal">
+          <span class="card-ico">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#2e4a5e" stroke-width="1.8" aria-hidden="true"><path d="M3 9.5L12 4l9 5.5M4.5 10v9M9 10v9M15 10v9M19.5 10v9M3 19.5h18"/></svg>
+          </span>
+          <h3>По реквизитам счёта</h3>
+          <p>Подойдёт для перевода из любого банка — и от организаций тоже.</p>
+          <button class="card-link" type="button" data-donate-open>Открыть реквизиты →</button>
         </div>
         <div class="card reveal">
           <span class="card-ico">
-            <svg viewBox="0 0 24 24" fill="none" stroke="#4a7bab" stroke-width="1.8" aria-hidden="true"><rect x="2.5" y="5" width="19" height="14" rx="2.5"/><path d="M2.5 9.5h19M6 15h4"/></svg>
+            <svg viewBox="0 0 24 24" fill="none" stroke="#2e4a5e" stroke-width="1.8" aria-hidden="true"><path d="M5 4h4l1.5 4.5-2.2 1.6a13 13 0 005.6 5.6l1.6-2.2L20 15v4a1.5 1.5 0 01-1.7 1.5C10.4 19.6 4.4 13.6 3.5 5.7A1.5 1.5 0 015 4z"/></svg>
           </span>
-          <h3>На карту</h3>
-          <p>Перевод на карту по номеру — из приложения банка или банкомата. Номер можно скопировать.</p>
-          <button class="card-link" type="button" data-donate-open style="background:none;border:0;padding:0;cursor:pointer;text-align:left;">Открыть номер карты →</button>
-        </div>
-        <div class="card reveal">
-          <span class="card-ico">
-            <svg viewBox="0 0 24 24" fill="none" stroke="#4a7bab" stroke-width="1.8" aria-hidden="true"><path d="M3 9.5L12 4l9 5.5M4.5 10v9M9 10v9M15 10v9M19.5 10v9M3 19.5h18"/></svg>
-          </span>
-          <h3>По реквизитам</h3>
-          <p>Банковский перевод по номеру счёта — для переводов из любого банка и от организаций.</p>
-          <button class="card-link" type="button" data-donate-open style="background:none;border:0;padding:0;cursor:pointer;text-align:left;">Открыть реквизиты →</button>
-        </div>
-        <div class="card reveal">
-          <span class="card-ico">
-            <svg viewBox="0 0 24 24" fill="none" stroke="#4a7bab" stroke-width="1.8" aria-hidden="true"><path d="M5 4h4l1.5 4.5-2.2 1.6a13 13 0 005.6 5.6l1.6-2.2L20 15v4a1.5 1.5 0 01-1.7 1.5C10.4 19.6 4.4 13.6 3.5 5.7A1.5 1.5 0 015 4z"/></svg>
-          </span>
-          <h3>Связаться с нами</h3>
-          <p>Есть вопросы о сборе, хотите помочь иначе — напишите или позвоните организаторам.</p>
+          <h3>Сомневаетесь? Напишите</h3>
+          <p>Расскажем про диагноз, лечение и документы. Не стесняйтесь — отвечаем сами.</p>
           <a class="card-link" href="contacts.html">Контакты →</a>
         </div>
       </div>
@@ -143,18 +150,21 @@
     <div class="container story-layout">
       <div>
         <div class="section-head reveal">
-          <span class="chip blue">История</span>
+          <span class="chip blue">наша история</span>
           <h2>Миша борется за жизнь</h2>
         </div>
+        <p class="quote-hand reveal">«Динозавры помогают мне лечиться, — говорит Миша. — Особенно тираннозавр»</p>
         <div class="story-body reveal">
           <p data-fill="child.shortStory"></p>
         </div>
         <a class="btn btn-secondary mt-2 reveal" href="story.html">Читать полную историю</a>
       </div>
       <div class="story-side">
-        <img class="story-photo" src="img/photo-2.jpg" alt="Миша" loading="lazy" width="700" height="525">
-        <div class="card reveal">
-          <h3>На что нужны средства</h3>
+        <div class="photo-frame photo-frame--r">
+          <img class="story-photo" data-photo="1" src="photos/photo-2.jpg" alt="Миша с мамой" loading="lazy" width="700" height="525">
+        </div>
+        <div class="card reveal mt-3">
+          <h3>На что нужны деньги</h3>
           <ul class="check-list" data-whatfor></ul>
         </div>
       </div>
@@ -162,15 +172,15 @@
   </section>
 
   <!-- ОТЧЁТЫ -->
-  <section class="section section-alt">
+  <section class="section-alt">
     <div class="container">
       <div class="section-head reveal">
-        <span class="chip blue">Отчёты</span>
+        <span class="chip blue">отчёты</span>
         <h2>Куда уходят деньги</h2>
-        <p>Мы публикуем отчёты о каждом расходе — с чеками и документами. Здесь — последние; все отчёты на отдельной странице.</p>
+        <p>Мы показываем каждый расход — с чеками и документами. Здесь последние, все остальные — на отдельной странице.</p>
       </div>
       <div class="timeline" data-reports data-limit="2"></div>
-      <a class="btn btn-ghost mt-3 reveal" href="reports.html">Все отчёты →</a>
+      <a class="btn btn-ghost mt-3 reveal" href="reports.html">Смотреть все отчёты →</a>
     </div>
   </section>
 
@@ -179,20 +189,24 @@
     <div class="container">
       <div class="section-head center reveal">
         <h2>Контакты организаторов</h2>
-        <p>Ответим на вопросы о сборе, документах и лечении.</p>
+        <p>Ответим на вопросы о сборе, документах и лечении — спрашивайте, не стесняйтесь.</p>
       </div>
       <div class="contact-grid reveal" data-contacts></div>
     </div>
   </section>
 
   <!-- ПОДЕЛИТЬСЯ -->
-  <section class="section section-alt">
-    <div class="container text-center">
+  <section class="section-alt">
+    <div class="wave" aria-hidden="true">
+      <svg viewBox="0 0 1440 42" preserveAspectRatio="none"><path fill="currentColor" d="M0 20 C 130 6 250 34 370 22 C 490 10 610 32 730 20 C 850 8 970 30 1090 18 C 1210 6 1330 28 1440 16 L 1440 42 L 0 42 Z"/></svg>
+    </div>
+    <div class="container text-center section" style="padding-top:30px;">
       <div class="section-head center reveal">
         <h2>Не можете помочь деньгами?</h2>
-        <p>Расскажите о сборе — это тоже огромная помощь. Поделитесь ссылкой с друзьями.</p>
+        <p>Тогда просто расскажите о Мише — это тоже огромная помощь.</p>
       </div>
       <div class="share-row reveal" data-share></div>
+      <p class="hand mt-2">одна пересланная ссылка — это иногда целое лекарство</p>
     </div>
   </section>
 
@@ -220,12 +234,12 @@
       <div>
         <h4>Помочь</h4>
         <p>Каждый перевод — вклад в выздоровление. Спасибо, что вы с нами.</p>
-        <a class="btn btn-primary" href="#donate" data-donate-open>Сделать пожертвование</a>
+        <a class="btn btn-primary" href="#donate" data-donate-open>Помочь Мише</a>
       </div>
     </div>
     <div class="footer-bottom">
       <span>© <span data-year>2026</span> <span data-fill="site.title">Поможем Мише</span></span>
-      <span>Сделано с заботой ♥</span>
+      <span>сделано с заботой ♥</span>
     </div>
   </div>
 </footer>
