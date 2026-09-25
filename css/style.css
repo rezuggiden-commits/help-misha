@@ -320,6 +320,14 @@ a:hover { color: var(--blue-dark); }
   color: var(--muted);
 }
 .progress-meta b { color: var(--blue-dark); }
+.deadline-note {
+  margin: 10px 0 0;
+  font-size: .88rem;
+  color: var(--muted);
+  text-align: center;
+}
+.deadline-note b { color: var(--terra-dark); }
+.progress-card .deadline-note[hidden] { display: none; }
 
 /* ---------- Карточки ---------- */
 .cards-grid { display: grid; gap: 18px; }

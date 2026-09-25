@@ -110,6 +110,11 @@
   $$("[data-left]").forEach((el) => (el.textContent = fmtMoney(Math.max(0, goal - raised))));
   $$("[data-percent]").forEach((el) => (el.textContent = pct + "%"));
 
+  // Срок сбора (если указан)
+  const deadline = S.fundraising && S.fundraising.deadline;
+  $$("[data-deadline]").forEach((el) => (el.textContent = deadline || ""));
+  $$("[data-deadline-wrap]").forEach((el) => { el.hidden = !deadline; });
+
   const bars = $$("[data-progress-bar]");
   if (bars.length) {
     // Запускаем анимацию после первой отрисовки
