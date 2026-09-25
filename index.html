@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Поможем Мише — сбор на лечение ребёнка</title>
+  <meta name="description" content="Сбор средств на лечение Миши. Каждый перевод — шаг к выздоровлению. Помогите: СБП, карта, перевод по реквизитам.">
+  <link rel="canonical" href="https://rezuggiden-commits.github.io/help-misha/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Поможем Мише">
+  <meta property="og:title" content="Поможем Мише — сбор на лечение">
+  <meta property="og:description" content="Каждый перевод — шаг к выздоровлению. СБП, карта, перевод по реквизитам.">
+  <meta property="og:url" content="https://rezuggiden-commits.github.io/help-misha/">
+  <meta property="og:image" content="https://rezuggiden-commits.github.io/help-misha/img/og-cover.jpg">
+  <meta property="og:locale" content="ru_RU">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="theme-color" content="#3d5a80">
+  <link rel="icon" href="img/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="img/favicon-192.png" type="image/png" sizes="192x192">
+  <link rel="apple-touch-icon" href="img/favicon-180.png">
+  <link rel="stylesheet" href="css/style.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "Поможем Мише",
+    "url": "https://rezuggiden-commits.github.io/help-misha/",
+    "description": "Сбор средств на лечение Миши",
+    "inLanguage": "ru-RU"
+  }
+  </script>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="logo" href="index.html">
+      <svg class="heart-ico" viewBox="0 0 24 24" fill="currentColor" width="26" height="26" aria-hidden="true"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+      <span data-fill="site.title">Поможем Мише</span>
+    </a>
+    <nav class="nav" aria-label="Основная навигация">
+      <a href="story.html">История</a>
+      <a href="gallery.html">Галерея</a>
+      <a href="reports.html">Отчёты</a>
+      <a href="contacts.html">Контакты</a>
+      <a class="btn btn-primary btn-sm" href="#donate" data-donate-open>Помочь</a>
+    </nav>
+    <button class="burger" id="burger" aria-label="Открыть меню" aria-expanded="false"><span></span><span></span><span></span></button>
+  </div>
+  <nav class="mobile-nav" id="mobile-nav" hidden aria-label="Мобильное меню">
+    <a href="story.html">История</a>
+    <a href="gallery.html">Галерея</a>
+    <a href="reports.html">Отчёты</a>
+    <a href="contacts.html">Контакты</a>
+    <a class="btn btn-primary" href="#donate" data-donate-open>Сделать пожертвование</a>
+  </nav>
+</header>
+
+<main>
+
+  <!-- ГЕРОЙ -->
+  <section class="hero">
+    <div class="container hero-grid">
+      <div class="slider" data-slider aria-label="Фотографии Миши" aria-roledescription="карусель">
+        <div class="slider-track" data-slider-track></div>
+        <button class="slider-arrow prev" type="button" data-slider-prev aria-label="Предыдущее фото">‹</button>
+        <button class="slider-arrow next" type="button" data-slider-next aria-label="Следующее фото">›</button>
+        <div class="slider-dots" data-slider-dots></div>
+      </div>
+      <div class="hero-text">
+        <span class="chip">Нужна ваша помощь</span>
+        <h1>Поможем <span data-fill="child.nameDative">Мише</span> победить болезнь</h1>
+        <p class="lead" data-fill="child.shortStory"></p>
+        <div class="progress-card">
+          <div class="progress-amounts">
+            <span class="raised" data-raised>—</span>
+            <span class="goal">из <span data-goal>—</span></span>
+          </div>
+          <div class="progress" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+            <div class="progress-fill" data-progress-bar></div>
+          </div>
+          <div class="progress-meta">
+            <span>Собрано <b data-percent>0%</b></span>
+            <span>Осталось <b data-left>—</b></span>
+          </div>
+        </div>
+        <div class="hero-cta">
+          <button class="btn btn-primary btn-lg" type="button" data-donate-open>Сделать пожертвование</button>
+          <a class="btn btn-ghost" href="story.html">Узнать историю</a>
+        </div>
+        <p class="hero-note">Переводы принимаются через СБП, на карту и по реквизитам. Отчёты о тратах — в разделе «Отчёты».</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- КАК ПОМОЧЬ -->
+  <section class="section section-alt" id="how-help">
+    <div class="container">
+      <div class="section-head center reveal">
+        <h2>Как помочь</h2>
+        <p>Выберите удобный способ — все переводы идут на оплату лечения. Нажмите на способ, чтобы открыть подробности.</p>
+      </div>
+      <div class="cards-grid cols-4">
+        <div class="card reveal">
+          <span class="card-ico">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#4a7bab" stroke-width="1.8" aria-hidden="true"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><path d="M14 14h3v3h-3zM20 14h1M14 20h1M18 18h3v3h-3z"/></svg>
+          </span>
+          <h3>СБП по QR-коду</h3>
+          <p>Наведите камеру на QR-код — перевод через приложение вашего банка, без комиссии.</p>
+          <button class="card-link" type="button" data-donate-open style="background:none;border:0;padding:0;cursor:pointer;text-align:left;">Показать QR →</button>
+        </div>
+        <div class="card reveal">
+          <span class="card-ico">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#4a7bab" stroke-width="1.8" aria-hidden="true"><rect x="2.5" y="5" width="19" height="14" rx="2.5"/><path d="M2.5 9.5h19M6 15h4"/></svg>
+          </span>
+          <h3>На карту</h3>
+          <p>Перевод на карту по номеру — из приложения банка или банкомата. Номер можно скопировать.</p>
+          <button class="card-link" type="button" data-donate-open style="background:none;border:0;padding:0;cursor:pointer;text-align:left;">Открыть номер карты →</button>
+        </div>
+        <div class="card reveal">
+          <span class="card-ico">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#4a7bab" stroke-width="1.8" aria-hidden="true"><path d="M3 9.5L12 4l9 5.5M4.5 10v9M9 10v9M15 10v9M19.5 10v9M3 19.5h18"/></svg>
+          </span>
+          <h3>По реквизитам</h3>
+          <p>Банковский перевод по номеру счёта — для переводов из любого банка и от организаций.</p>
+          <button class="card-link" type="button" data-donate-open style="background:none;border:0;padding:0;cursor:pointer;text-align:left;">Открыть реквизиты →</button>
+        </div>
+        <div class="card reveal">
+          <span class="card-ico">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#4a7bab" stroke-width="1.8" aria-hidden="true"><path d="M5 4h4l1.5 4.5-2.2 1.6a13 13 0 005.6 5.6l1.6-2.2L20 15v4a1.5 1.5 0 01-1.7 1.5C10.4 19.6 4.4 13.6 3.5 5.7A1.5 1.5 0 015 4z"/></svg>
+          </span>
+          <h3>Связаться с нами</h3>
+          <p>Есть вопросы о сборе, хотите помочь иначе — напишите или позвоните организаторам.</p>
+          <a class="card-link" href="contacts.html">Контакты →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- КРАТКАЯ ИСТОРИЯ -->
+  <section class="section">
+    <div class="container story-layout">
+      <div>
+        <div class="section-head reveal">
+          <span class="chip blue">История</span>
+          <h2>Миша борется за жизнь</h2>
+        </div>
+        <div class="story-body reveal">
+          <p data-fill="child.shortStory"></p>
+        </div>
+        <a class="btn btn-secondary mt-2 reveal" href="story.html">Читать полную историю</a>
+      </div>
+      <div class="story-side">
+        <img class="story-photo" src="img/photo-2.jpg" alt="Миша" loading="lazy" width="700" height="525">
+        <div class="card reveal">
+          <h3>На что нужны средства</h3>
+          <ul class="check-list" data-whatfor></ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ОТЧЁТЫ -->
+  <section class="section section-alt">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="chip blue">Отчёты</span>
+        <h2>Куда уходят деньги</h2>
+        <p>Мы публикуем отчёты о каждом расходе — с чеками и документами. Здесь — последние; все отчёты на отдельной странице.</p>
+      </div>
+      <div class="timeline" data-reports data-limit="2"></div>
+      <a class="btn btn-ghost mt-3 reveal" href="reports.html">Все отчёты →</a>
+    </div>
+  </section>
+
+  <!-- КОНТАКТЫ КРАТКО -->
+  <section class="section">
+    <div class="container">
+      <div class="section-head center reveal">
+        <h2>Контакты организаторов</h2>
+        <p>Ответим на вопросы о сборе, документах и лечении.</p>
+      </div>
+      <div class="contact-grid reveal" data-contacts></div>
+    </div>
+  </section>
+
+  <!-- ПОДЕЛИТЬСЯ -->
+  <section class="section section-alt">
+    <div class="container text-center">
+      <div class="section-head center reveal">
+        <h2>Не можете помочь деньгами?</h2>
+        <p>Расскажите о сборе — это тоже огромная помощь. Поделитесь ссылкой с друзьями.</p>
+      </div>
+      <div class="share-row reveal" data-share></div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-legal">
+        <h4>Организатор сбора</h4>
+        <p data-legal-organizer></p>
+        <p data-legal-status></p>
+        <p data-legal-extra></p>
+        <p>Реквизиты для перевода — в разделе «Как помочь» или по кнопке «Помочь».</p>
+      </div>
+      <div>
+        <h4>Разделы</h4>
+        <ul class="footer-links">
+          <li><a href="story.html">История</a></li>
+          <li><a href="gallery.html">Галерея</a></li>
+          <li><a href="reports.html">Отчёты о тратах</a></li>
+          <li><a href="contacts.html">Контакты</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Помочь</h4>
+        <p>Каждый перевод — вклад в выздоровление. Спасибо, что вы с нами.</p>
+        <a class="btn btn-primary" href="#donate" data-donate-open>Сделать пожертвование</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© <span data-year>2026</span> <span data-fill="site.title">Поможем Мише</span></span>
+      <span>Сделано с заботой ♥</span>
+    </div>
+  </div>
+</footer>
+
+<script src="config.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>

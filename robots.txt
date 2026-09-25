@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /thanks.html
+
+Sitemap: https://rezuggiden-commits.github.io/help-misha/sitemap.xml
